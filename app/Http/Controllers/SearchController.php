@@ -1,4 +1,7 @@
 <?php
+// The search function (unfinished)
+// Need to create a search page for tags and text
+// More future search functions: search by date
 
 namespace App\Http\Controllers;
 
@@ -8,9 +11,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
-class PostController extends Controller
+class SearchController extends Controller
 {
-    public function view(Posts $post){
+    public function viewtag(Posts $post){
         $tags = $post->tags()->get();
         return view("publish.post",[
                     'post' => $post,

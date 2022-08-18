@@ -16,16 +16,5 @@ class Posts extends Model
         return $this->belongsToMany(Tag::class);
     }
 
-    // public function filter()
-    // {
-    //     $posttags = Tag::with($post)->get();
-    //     dd($posttags);
-
-        // $posts = Posts::all();
-        // $tag_id = $tag->id;
-        // $posts-> where('tags', 'like', '%', $tag_name, '%');
-        // dd($posts->get());
-    // }
-
 }
 

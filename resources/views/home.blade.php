@@ -20,25 +20,29 @@
 </form>
 @endguest
 
-<h1>Mia's Blog</h1>
-
+<h1><a href="/" style="text-decoration: none;">Mia's Blog</a></h1>
+<table class="table4">
 @admin
+<td>
 <form action="/publish">
-    <button type="submit">Add new post</button>
+    <button type="submit" style="margin:0;">Add new post</button>
 </form>
+</td>
 @endadmin
-</div>
+<td>
 <div x-data="{ open: false }" x-on:click.outside="open = false">
     <button x-on:click="open = !open" class="tag_btn">
         Search by
         <span :class="{'rotated': open}">&raquo;</span>
       </button>
       <ul x-show="open" x-transition.opacity class="tag_menu">
-        @foreach($tags as $tag)
-        <li class="tag_options"><a href="/tag/{{$tag->slug}}" class="tag_link">{{$tag->tag}}</a></li>
-        @endforeach
+        <li class="tag_options"><a href="/" class="tag_link">Text</a></li>
+        <li class="tag_options"><a href="/tag" class="tag_link">Tag</a></li>
       </ul>
-      <input type='text' class='search'>
+      <input type='search' class='search'>
+</div>
+</td>
+</table>
 </div>
 
 

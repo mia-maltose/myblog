@@ -9,7 +9,7 @@ use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\FacebookController;
-use App\Http\Controllers\TagController;
+use App\Http\Controllers\SearchController;
 use Laravel\Socialite\Facades\Socialite;
 
 
@@ -50,11 +50,8 @@ Route::get('home/{post:slug}', [Postcontroller::class, 'view']);
 //     ]);
 // });
 
+Route::get('tag', [Searchcontroller::class, 'viewtag']);
 Route::get('tag/{tag:slug}', [Postcontroller::class, 'filter']);
-
-// Route::get('tag/{tag:slug}', function (Tag $tag) {
-//     return App::call('App\Http\Controllers\PostController@filter',['tag' => $tag, 'posts'=>Posts::all()]);
-// });
 
 Route::get('register',[Registercontroller::class, 'create'])->middleware('guest');
 Route::post('register',[Registercontroller::class, 'store'])->middleware('guest');

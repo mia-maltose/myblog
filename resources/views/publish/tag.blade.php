@@ -20,7 +20,7 @@
 </form>
 @endguest
 
-<h1>Mia's Blog</h1>
+<h1><a href="/" style="text-decoration: none;">Mia's Blog</a></h1>
 
 @admin
 <form action="/publish">
@@ -34,13 +34,13 @@
         <span :class="{'rotated': open}">&raquo;</span>
       </button>
       <ul x-show="open" x-transition.opacity class="tag_menu">
-        @foreach($tags as $tag)
-        <li class="tag_options"><a href="/tag/{{$tag->slug}}" class="tag_link">{{$tag->tag}}</a></li>
-        @endforeach
+        <li class="tag_options"><a href="/" class="tag_link">Text</a></li>
+        <li class="tag_options"><a href="/" class="tag_link">Tag</a></li>
       </ul>
       <input type='text' class='search'>
-</div>
+    </div>
 
+<h2> Results of <b style="color:dodgerblue;">#{{$tag}}</b>:</h2>
 
 
 @foreach ($posts as $post)

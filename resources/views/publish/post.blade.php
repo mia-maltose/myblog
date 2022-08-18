@@ -22,7 +22,7 @@
 
 <p>
     @foreach($tags as $tag)
-    <span><a href="/tag/{{$tag->slug}}" style="color:plum">#{{$tag->tag}}</a></span>
+    <span><a href="/tag/{{$tag->slug}}" style="color:dodgerblue">#{{$tag->tag}}</a></span>
     @endforeach
 </p>
 
